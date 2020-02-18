@@ -1,0 +1,194 @@
+{
+    "$schema":"https://developer.microsoft.com/json-schemas/sp/view-formatting.schema.json",
+    "hideSelection":true,
+    "hideColumnHeader":true,
+    "rowFormatter":{
+       "elmType":"button",
+       "_comment_":"MAIN DIV",
+       "style":{
+          "background-color":"#57c9e8",
+          "Color":"57c9e8",
+          "float":"Left",
+          "display":"flex",
+          "flex-wrap":"nowrap",
+          "align-items":"Left",
+          "flex-direction":"column",
+          "justify-content":"space-around",
+          "padding":"5px",
+          "margin-bottom":"10px",
+          "width":"425px",
+          "height":"360px",
+          "border-radius":"5px",
+          "box-shadow":"2px 2px 4px darkgrey"
+       },
+       "attributes":{
+          "class":"sp-row-card"
+       },
+       "children":[
+          {
+             "elmType":"div",
+             "_comment_":"DIV ONE",
+             "style":{
+                "flex-grow":"1",
+                "display":"flex",
+                "flex-direction":"column",
+                "flex-wrap":"nowrap",
+                "align-items":"stretch",
+                "max-width":"260px"
+             },
+             "children":[
+                {
+                   "elmType":"img",
+                   "style":{
+                      "width":"160px",
+                      "height":"160px"
+                   },
+                   "attributes":{
+                      "src":"='/_layouts/15/userphoto.aspx?size=S&accountname=' + [$Author.email]"
+                   }
+                }
+             ]
+          },
+          {
+             "elmType":"div",
+             "_comment_":"DIV TWO",
+             "style":{
+                "flex-grow":"1",
+                "display":"flex",
+                "flex-direction":"column",
+                "flex-wrap":"nowrap",
+                "align-items":"center",
+                "max-width":"310px",
+                "min-width":"205px",
+                "margin-top":"8px"
+             },
+             "children":[
+                {
+                   "elmType":"span",
+                   "txtContent":"=[$Title]",
+                   "style":{
+                      "padding-bottom":"5px",
+                      "display":"=if([$Title] == '', 'none', 'block')"
+                   },
+                   "attributes":{
+                      "class":"ms-fontSize-l ms-fontWeight-semibold ms-fontColor-neutralPrimary"
+                   }
+                },
+                {
+                   "elmType":"span",
+                   "txtContent":"=[$Request_x0020_Status]",
+                   "style":{
+                      "color":"white",
+                      "height":"25px",
+                      "background-color":{
+                         "operator":"?",
+                         "operands":[
+                            {
+                               "operator":"==",
+                               "operands":[
+                                  "[$Request_x0020_Status]",
+                                  "New Request"
+                               ]
+                            },
+                            "#ff5271",
+                            {
+                               "operator":"?",
+                               "operands":[
+                                  {
+                                     "operator":"==",
+                                     "operands":[
+                                        "[$Request_x0020_Status]",
+                                        "New Request - Ongoing review"
+                                     ]
+                                  },
+                                  "#ffdb00",
+                                  {
+                                     "operator":"?",
+                                     "operands":[
+                                        {
+                                           "operator":"==",
+                                           "operands":[
+                                              "[$Request_x0020_Status]",
+                                              " Rejected - Does not meet criteria"
+                                           ]
+                                        },
+                                        "#ff5271",
+                                        {
+                                           "operator":"?",
+                                           "operands":[
+                                              {
+                                                 "operator":"==",
+                                                 "operands":[
+                                                    "[$Request_x0020_Status]",
+                                                    "  Rejected - Alternative solution provided"
+                                                 ]
+                                              },
+                                              "#ff5271",
+                                              "#00c18b"
+                                           ]
+                                        }
+                                     ]
+                                  }
+                               ]
+                            }
+                         ]
+                      }
+                   },
+                   "attributes":{
+                      "class":"ms-fontSize-l ms-fontWeight-semibold ms-fontColor-neutralPrimary"
+                   }
+                },
+                {
+                   "elmType":"span",
+                   "txtContent":"='Requested abbrevation: '+ '[$Does_x0020_your_x0020_team_x0020]'",
+                   "style":{
+                      "padding-top":"10px",
+                      "padding-bottom":"10px"
+                   }
+                },
+                {
+                   "elmType":"a",
+                   "txtContent":"View this item",
+                   "style":{
+                      "font-weight":"bold",
+                      "text-align":"center",
+                      "width":"100px",
+                      "height":"20px",
+                      "background-color":"#1d2b4d",
+                      "color":"white",
+                      "display":"inline-block",
+                      "padding":"2px 2px 2px",
+                      "border":"none"
+                   },
+                   "attributes":{
+                      "target":"_blank",
+                      "href":"='https://pheeld.sharepoint.com/sites/PaddysTEST/lists/SRS%20LISTSS/DispForm.aspx?ID=' + [$ID]"
+                   }
+                }
+             ]
+          },
+          {
+             "elmType":"div",
+             "_comment_":"DIV THREE",
+             "style":{
+                "flex-grow":"1",
+                "display":"flex",
+                "flex-direction":"column",
+                "align-items":"center",
+                "max-width":"310px",
+                "min-width":"155px"
+             },
+             "children":[
+                {
+                   "elmType":"span",
+                   "txtContent":"='List of Business owners: ' +'[$who_x0020_will_x0020_be_x0020_th0.title]'",
+                   "style":{
+                      "font-size":"16px",
+                      "white-space":"normal"
+                   }
+                }
+             ]
+          }
+       ]
+    }
+  }
