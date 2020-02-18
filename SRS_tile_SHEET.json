@@ -162,7 +162,7 @@
                    },
                    "attributes":{
                       "target":"_blank",
-                      "href":"='https://pheeld.sharepoint.com/sites/PaddysTEST/lists/SRS%20LISTSS/DispForm.aspx?ID=' + [$ID]"
+                      "href":"='https:<SITE>/lists/<LIST>/DispForm.aspx?ID=' + [$ID]"
                    }
                 }
              ]
