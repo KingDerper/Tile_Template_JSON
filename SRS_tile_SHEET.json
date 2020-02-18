@@ -17,7 +17,7 @@
           "padding":"5px",
           "margin-bottom":"10px",
           "width":"425px",
-          "height":"360px",
+          "height":"320px",
           "border-radius":"5px",
           "box-shadow":"2px 2px 4px darkgrey"
        },
@@ -34,17 +34,19 @@
                 "flex-direction":"column",
                 "flex-wrap":"nowrap",
                 "align-items":"stretch",
-                "max-width":"260px"
+                "max-width":"100px",
+                "max-height":"100px"
              },
              "children":[
                 {
                    "elmType":"img",
                    "style":{
-                      "width":"160px",
-                      "height":"160px"
+                      "padding-top":"10px",
+                      "width":"72px",
+                      "height":"72px"
                    },
                    "attributes":{
-                      "src":"='/_layouts/15/userphoto.aspx?size=S&accountname=' + [$Author.email]"
+                      "src":"='/_layouts/15/userphoto.aspx?size=l&accountname=' + [$Author.email]"
                    }
                 }
              ]
@@ -58,9 +60,10 @@
                 "flex-direction":"column",
                 "flex-wrap":"nowrap",
                 "align-items":"center",
+                "max-height":"150px",
                 "max-width":"310px",
                 "min-width":"205px",
-                "margin-top":"8px"
+                "margin-top":"1px"
              },
              "children":[
                 {
@@ -68,10 +71,13 @@
                    "txtContent":"=[$Title]",
                    "style":{
                       "padding-bottom":"5px",
+                      "font-size":"16px",
+                      "font-weight":"bold",
+                      "color":"#1d2b4d",
                       "display":"=if([$Title] == '', 'none', 'block')"
                    },
                    "attributes":{
-                      "class":"ms-fontSize-l ms-fontWeight-semibold ms-fontColor-neutralPrimary"
+                      "class":""
                    }
                 },
                 {
@@ -162,7 +168,7 @@
                    },
                    "attributes":{
                       "target":"_blank",
-                      "href":"='https:<SITE>/lists/<LIST>/DispForm.aspx?ID=' + [$ID]"
+                      "href":"='https://<SiteURL>/lists/<LIST>/DispForm.aspx?ID=' + [$ID]"
                    }
                 }
              ]
@@ -181,9 +187,10 @@
              "children":[
                 {
                    "elmType":"span",
-                   "txtContent":"='List of Business owners: ' +'[$who_x0020_will_x0020_be_x0020_th0.title]'",
+                   "txtContent":"='List of business owners: ' +'[$who_x0020_will_x0020_be_x0020_th0.title]'",
                    "style":{
-                      "font-size":"16px",
+                      "color":"#1d2b4d",
+                      "font-size":"15px",
                       "white-space":"normal"
                    }
                 }
